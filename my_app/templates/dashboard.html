@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message  |  Dashboard</title>
+    <style></style>
+</head>
+<body>
+    <center>
+    <h2>Dashboard</h2>  <!--<h2 align>-->
+    </center>
+    <a href="/create.html">Create Message</a>
+    <!--{{data}}-->
+    <!--{% for x in data %}
+        {{x}}<br>
+    {% endfor %}-->
+
+
+    <table border="1" align="center">
+        <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Message</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.Mobile}}</td>
+            <td>{{x.msg}}</td>
+            <td><a href="/edit/{{x.id}}">Edit</a></td>
+            <td><a href="/delete/{{x.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

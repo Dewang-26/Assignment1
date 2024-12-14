@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="row mt-3">
+        {% for x in products %}
+        <div class="col-md-6">
+            <img src="{{x.pimage.url}}" width="100%" class="card-img-top" alt=""> 
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p><strong>Product Name:</strong>{{x.name}}</p>
+        <p><strong>Price:</strong>RS.{{x.price}}</p>
+        {% if x.cat == 1 %}
+        <p><strong>Category:</strong>{{x.cat}}</p>
+        {% elif x.cat == 2 %}
+        <p><strong>Category:</strong>Shoes</p>
+        {% else %}
+        <p><strong>Category:</strong>Clothes</p>
+        {% endif %}
+        <p><strong>Product description:</strong>{{x.pdetails}}</p>
+        <br>
+        <a href="/my_app/templates/create.html" class="btn-danger">Add to the Cart</a>&nbsp;
+        <a href="cart.html" class="btn btn-danger">View Cart</a>&nbsp;&nbsp;
+        <a href="/" class="btn btn-danger">Shop More</a>
+        {% if success %}
+            <div class="alert alert-success">
+                
+            </div>
+    </div>
+</body>
+</html>
